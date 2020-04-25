@@ -93,7 +93,7 @@ const App = () => {
                                 <Typography></Typography>
                             </div>
                             <Box mb={6} />
-                            {finalData && !finalData.msg ? (
+                            {finalData && !finalData.msg && Object.keys(finalData) && Object.keys(finalData).length ? (
                                 <Details data={finalData} />
                             ) : loading ? (
                                 <div className={classes.progresWrapper}>
