@@ -1,0 +1,6 @@
+node_modules
+src/serviceWorker
+build
+built-lambda
+.netlify
+public

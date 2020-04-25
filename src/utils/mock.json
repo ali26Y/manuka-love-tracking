@@ -1,0 +1,35 @@
+{
+    "analyticaFile": {
+      "_meta": {
+        "ETag": "\"ea693f6a85260a4fbfdf2ee2d4176820\"",
+        "Location": "https://manuka-love.s3.ap-southeast-2.amazonaws.com/lab-pdfs/analytica_1586769356197_5e942dcc685f1e4a73c1c7fa",
+        "key": "lab-pdfs/analytica_1586769356197_5e942dcc685f1e4a73c1c7fa",
+        "Key": "lab-pdfs/analytica_1586769356197_5e942dcc685f1e4a73c1c7fa",
+        "Bucket": "manuka-love"
+      },
+      "id": "5e942dcc685f1e4a73c1c7fa",
+      "filename": "analytica_5e9c1cada9e096e888d2945f",
+      "originalFilename": "lab-results-2.pdf",
+      "mimetype": "application/pdf",
+      "encoding": "7bit"
+    },
+    "_id": "5e93cead3561201958908f0a",
+    "batchId": "13245",
+    "mgo": 550,
+    "rmpId": "123456",
+    "mfgDate_utc": "2019-12-12T02:00:00.000Z",
+    "mfgDate_offset": "+10:00",
+    "bbDate_utc": "2019-05-11T02:00:00.000Z",
+    "bbDate_offset": "+10:00",
+    "beekeeper": {
+      "_id": "5e933c260c39e88515b07991",
+      "city": "Hamilton",
+      "postcode": "0600",
+      "area": "Hamilton Valley",
+      "firstName": "Faisal",
+      "lastName": "Attayee",
+      "nickName": "Faisal",
+      "__v": 0
+    },
+    "__v": 0
+  }
