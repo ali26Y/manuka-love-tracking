@@ -1,9 +1,12 @@
 import mongoose from 'mongoose';
 
 mongoose
-    .connect(process.env.REACT_APP_OLD_MONGO_URI, {
+    .connect(process.env.REACT_APP_MONGO_URI_STRING, {
         useUnifiedTopology: true,
         useNewUrlParser: true,
+        user: process.env.REACT_APP_MONGO_USERNAME,
+        pass: process.env.REACT_APP_MONGO_PASSWORD,
+        dbName: process.env.REACT_APP_MONGO_DB,
     })
     .catch(err => {
         console.log(`DB Connection Error: ${err.message}`);

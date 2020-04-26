@@ -1,17 +1,17 @@
 {
     "analyticaFile": {
-      "_meta": {
-        "ETag": "\"ea693f6a85260a4fbfdf2ee2d4176820\"",
-        "Location": "https://manuka-love.s3.ap-southeast-2.amazonaws.com/lab-pdfs/analytica_1586769356197_5e942dcc685f1e4a73c1c7fa",
-        "key": "lab-pdfs/analytica_1586769356197_5e942dcc685f1e4a73c1c7fa",
-        "Key": "lab-pdfs/analytica_1586769356197_5e942dcc685f1e4a73c1c7fa",
-        "Bucket": "manuka-love"
-      },
-      "id": "5e942dcc685f1e4a73c1c7fa",
-      "filename": "analytica_5e9c1cada9e096e888d2945f",
-      "originalFilename": "lab-results-2.pdf",
-      "mimetype": "application/pdf",
-      "encoding": "7bit"
+        "_meta": {
+            "ETag": "\"ea693f6a85260a4fbfdf2ee2d4176820\"",
+            "Location": "https://manuka-love.s3.ap-southeast-2.amazonaws.com/lab-pdfs/analytica_5e9c1cada9e096e888d2945f",
+            "key": "lab-pdfs/analytica_5e9c1cada9e096e888d2945f",
+            "Key": "lab-pdfs/analytica_5e9c1cada9e096e888d2945f",
+            "Bucket": "manuka-love"
+        },
+        "id": "5e9c1cada9e096e888d2945f",
+        "filename": "analytica_5e9c1cada9e096e888d2945f",
+        "originalFilename": "lab-results.pdf",
+        "mimetype": "application/pdf",
+        "encoding": "7bit"
     },
     "_id": "5e93cead3561201958908f0a",
     "batchId": "13245",
@@ -22,14 +22,31 @@
     "bbDate_utc": "2019-05-11T02:00:00.000Z",
     "bbDate_offset": "+10:00",
     "beekeeper": {
-      "_id": "5e933c260c39e88515b07991",
-      "city": "Hamilton",
-      "postcode": "0600",
-      "area": "Hamilton Valley",
-      "firstName": "Faisal",
-      "lastName": "Attayee",
-      "nickName": "Faisal",
-      "__v": 0
+        "_id": "5e933c260c39e88515b07991",
+        "city": "Hamilton",
+        "postcode": "0600",
+        "area": "Waikato Region",
+        "firstName": "Faisal",
+        "lastName": "Attayee",
+        "nickName": "Faisal",
+        "__v": 0,
+        "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Sample 100",
+        "latitude": -37.8856242,
+        "longitude": 174.9638496,
+        "locationImage": {
+            "id": "5ea40285bbe8857901034d73",
+            "filename": "analytica_5ea40285bbe8857901034d73",
+            "originalFilename": "waikato-newzealand.jpg",
+            "mimetype": "image/jpeg",
+            "encoding": "7bit",
+            "_meta": {
+                "ETag": "\"13e4dbdb7eb2f60094a5b5ea747ce31b\"",
+                "Location": "https://manuka-love.s3.ap-southeast-2.amazonaws.com/lab-pdfs/analytica_5ea40285bbe8857901034d73",
+                "key": "lab-pdfs/analytica_5ea40285bbe8857901034d73",
+                "Key": "lab-pdfs/analytica_5ea40285bbe8857901034d73",
+                "Bucket": "manuka-love"
+            }
+        }
     },
     "__v": 0
-  }
+}
