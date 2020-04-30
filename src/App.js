@@ -30,7 +30,15 @@ const App = () => {
         const qs = queryString.parse(window.location.search.replace('?', ''));
         setLoading(true);
         if (qs && qs.batchId && qs.batchId.length > 2) {
-            fetch(`/.netlify/functions/batchInfo?batchId=${qs.batchId}`)
+            fetch(`${process.env.REACT_APP_API_URL}/${qs.batchId}`, {
+                method: 'GET',
+                mode: 'cors',
+                Connection: 'keep-alive',
+                'Content-Type': 'application/json',
+                headers: {
+                    'x-api-key': process.env.REACT_APP_API_KEY,
+                },
+            })
                 .then(async payload => {
                     const json = await payload.json();
                     setData(json);

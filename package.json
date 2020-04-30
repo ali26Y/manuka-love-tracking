@@ -5,10 +5,9 @@
   "dependencies": {
     "@material-ui/core": "^4.9.10",
     "leaflet": "^1.6.0",
-    "leaflet-image": "^0.4.0",
     "moment": "^2.24.0",
     "mongodb": "^3.5.6",
-    "mongoose": "^5.9.9",
+    "mongoose": "^5.9.10",
     "query-string": "^6.12.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -18,13 +17,11 @@
   },
   "scripts": {
     "start": "react-scripts start -t 20000",
-    "start:lambda": "netlify-lambda serve src/lambda -t 20000",
-    "start:dev": "ntl dev -t 20000",
-    "build": "NODE_ENV=production run-p build:**",
-    "build:app": "NODE_ENV=production react-scripts build",
-    "build:lambda": "NODE_ENV=production netlify-lambda build src/lambda",
+    "build": "NODE_ENV=production react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy:staging": "netlify deploy",
+    "deploy:production": "netlify deploy --prod"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,8 +35,6 @@
   "devDependencies": {
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "netlify-lambda": "^1.4.5",
-    "npm-run-all": "^4.1.5",
     "prettier": "^1.17.1"
   }
 }
