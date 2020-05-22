@@ -12,6 +12,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-hook-form": "^5.4.2",
+    "react-image-gallery": "^1.0.7",
     "react-leaflet": "^2.6.3",
     "react-scripts": "^3.0.1"
   },
@@ -20,8 +21,8 @@
     "build": "NODE_ENV=production react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy:staging": "netlify deploy",
-    "deploy:production": "netlify deploy --prod"
+    "deploy:staging": "npm run build && netlify deploy",
+    "deploy:production": "npm run build && netlify deploy --prod"
   },
   "eslintConfig": {
     "extends": "react-app"

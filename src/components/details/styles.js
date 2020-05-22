@@ -30,11 +30,11 @@ export default createStyled(
             height: '450px',
         },
         fibreMap: {
-            height: 380,
+            height: 480,
             '& svg': {
                 position: 'relative',
-                top: '-39px',
-                left: '-20px',
+                top: '-24px',
+                left: '-12px',
             },
         },
         tooltipWrapper: {
@@ -44,7 +44,13 @@ export default createStyled(
             height: '100px',
             borderRadius: '70px',
             width: '100px',
-            border: 'solid 1px',
+            border: 'solid 2px',
+        },
+        popupText: {
+            color: '#000000 !important',
+        },
+        jarImage: {
+            width: '100%',
         },
     }),
     { withTheme: true }

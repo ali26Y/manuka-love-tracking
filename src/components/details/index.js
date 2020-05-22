@@ -4,6 +4,7 @@ import queryString from 'query-string';
 
 import { generateTableData } from './utils';
 import Map from './map';
+import Carousel from '../carousel';
 import Styled from './styles';
 
 const Details = props => {
@@ -35,6 +36,8 @@ const Details = props => {
                         ) : (
                             ''
                         )}
+                        <Box mb={2} />
+                        <img className={classes.jarImage} alt="manukaphoto" src={data.JarImage.photo._meta.Location} />
                         <Box mb={4} />
                         <Typography>Honey Details</Typography>
                         <Box mb={3} />
@@ -59,7 +62,11 @@ const Details = props => {
                             </Table>
                         </TableContainer>
                     </Container>
-                    <Box mb={8} />
+                    <Box mb={11} />
+                    <Fragment>
+                        <Carousel data={data} />
+                        <Box mb={11} />
+                    </Fragment>
                     <Map data={data} />
                 </Fragment>
             )}

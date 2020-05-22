@@ -15,15 +15,20 @@ export default createStyled(
                 top: '-25px',
                 padding: '0px 20px',
                 width: '350px',
-                color: '#C39550',
+                // color: '#C39550',
+                color: '#ffffff',
                 cursor: 'pointer',
-                fontWeight: 'bold',
+                fontWeight: '200 !important',
+                textTransform: 'uppercase',
                 '& a': {
                     color: 'inherit !important',
                     textDecoration: 'none !important',
                 },
                 '& span': {
-                    textDecoration: 'underline !important',
+                    textDecoration: 'none !important',
+                },
+                '&:hover': {
+                    color: '#a78435',
                 },
                 '@media (max-width: 1000px)': {
                     width: 'auto',
@@ -79,9 +84,9 @@ export default createStyled(
             '& a': {
                 color: '#ffffff',
                 textDecoration: 'none',
-                fontWeight: 'bold',
+                fontWeight: '200',
                 '&:hover': {
-                    color: theme.palette.primary.main,
+                    color: '#a78435',
                 },
             },
         },

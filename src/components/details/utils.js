@@ -28,6 +28,6 @@ export const generateTableData = data => [
     },
     {
         title: 'Beehive Location',
-        value: data.beekeeper.area,
+        value: data.location.area,
     },
 ];

@@ -54,9 +54,41 @@
     font-style: italic;
 }
 
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
 .App {
     background-color: #f0f0f0;
 }
 .leaflet-popup-content-wrapper {
-    background-color: rgba(255, 255, 255, 0.75) !important;
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.9) !important;
+}
+
+.leaflet-popup-tip-container {
+    display: none;
+}
+
+.leaflet-popup {
+    bottom: -12px !important;
+}
+
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+    max-height: 400px;
+}
+
+.image-gallery-content.left .image-gallery-slide .image-gallery-image {
+    max-height: 400px;
+    min-height: 400px;
+}
+
+.image-gallery-svg {
+    max-height: 60px !important;
+}
+
+.image-gallery-left-nav:hover, .image-gallery-right-nav:hover  {
+    color: #a78435;
+}
+
+.image-gallery-play-button .image-gallery-svg, .image-gallery-fullscreen-button .image-gallery-svg {
+    display: none;
 }

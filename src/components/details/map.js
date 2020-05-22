@@ -11,7 +11,7 @@ export const markerIcon = color =>
     new L.DivIcon({
         className: 'markerIcon',
         html: `
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 172 172" style=" fill:#000000;">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 172 172" style=" fill:#000000; opacity: 0.5;">
                     <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
                         <path d="M0,172v-172h172v172z" fill="none"></path>
                         <g fill=${color}>
@@ -41,21 +41,17 @@ class NewFibreSite extends Component {
                     <div className={classes.mapWrapper}>
                         <Container maxWidth="lg">
                             <Paper>
-                                <Map center={[data.beekeeper.latitude, data.beekeeper.longitude]} zoom={7} className={classes.fibreMap}>
+                                <Map center={[data.location.latitude, data.location.longitude]} zoom={10} className={classes.fibreMap}>
                                     <TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}" />
-                                    <MyMarker position={[data.beekeeper.latitude, data.beekeeper.longitude]} icon={markerIcon('#C39550')}>
+                                    <MyMarker position={[data.location.latitude, data.location.longitude]} icon={markerIcon('#C39550')}>
                                         <Popup>
                                             <Grid container>
-                                                <Grid xs={5}>
-                                                    <img
-                                                        className={classes.imgIcon}
-                                                        alt="map-imagez"
-                                                        src={data.beekeeper.locationImage._meta.Location}
-                                                    />
+                                                <Grid xs={5} item>
+                                                    <img className={classes.imgIcon} alt="map-imagez" src={data.location.mapImage._meta.Location} />
                                                 </Grid>
-                                                <Grid xs={7}>
-                                                    <span>
-                                                        <strong>{data.beekeeper.shortDescription}</strong>
+                                                <Grid xs={7} item>
+                                                    <span className={classes.popupText}>
+                                                        <strong>{data.location.shortDescription}</strong>
                                                     </span>
                                                 </Grid>
                                             </Grid>
