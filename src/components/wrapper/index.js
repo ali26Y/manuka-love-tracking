@@ -17,7 +17,7 @@ const ElevateAppBar = props => {
                                 <Toolbar>
                                     <div className={classes.menuContainer}>
                                         <Typography variant="h6" className={`${classes.header} ${classes.leftHeader}`}>
-                                            <a href="https://www.manukalove.co.nz/collections/manuka-love">Home</a>
+                                            <a href="https://www.manukalove.co.nz/collections/manuka-love">Shop</a>
                                         </Typography>
                                         <img className={classes.logo} src={logo} alt="Logo" />
                                         <Typography variant="h6" className={`${classes.header} ${classes.rightHeader}`}>
