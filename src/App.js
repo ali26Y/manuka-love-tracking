@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactGA from 'react-ga';
 import { Typography, Container, CssBaseline, Box, TextField, Button, CircularProgress } from '@material-ui/core';
 import { useForm, Controller } from 'react-hook-form';
 import queryString from 'query-string';
@@ -8,6 +9,13 @@ import searchIcon from './assets/search-icon.png';
 
 import Details from './components/details';
 import Header from './components/wrapper';
+
+function initializeReactGA() {
+    ReactGA.initialize('UA-167430869-1');
+    ReactGA.pageview('/tracking');
+}
+
+initializeReactGA();
 
 const App = () => {
     const [loading, setLoading] = React.useState(false);
@@ -19,8 +27,16 @@ const App = () => {
 
     const onSubmit = data => {
         if (data.batchId && data.batchId.length > 2) {
+            ReactGA.event({
+                category: 'User',
+                action: `User submits BatchId ${data.batchId}`,
+            });
             window.location.replace(`.?batchId=${data.batchId}`);
         } else {
+            ReactGA.event({
+                category: 'User',
+                action: `User submits wrong BatchId`,
+            });
             setData(undefined);
             setError('batchId', 'notMatch', 'Please enter a longer Batch ID');
         }

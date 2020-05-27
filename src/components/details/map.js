@@ -41,7 +41,12 @@ class NewFibreSite extends Component {
                     <div className={classes.mapWrapper}>
                         <Container maxWidth="lg">
                             <Paper>
-                                <Map center={[data.location.latitude, data.location.longitude]} zoom={10} className={classes.fibreMap}>
+                                <Map
+                                    center={[data.location.latitude, data.location.longitude]}
+                                    zoom={10}
+                                    className={classes.fibreMap}
+                                    attributionControl={false}
+                                >
                                     <TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}" />
                                     <MyMarker position={[data.location.latitude, data.location.longitude]} icon={markerIcon('#C39550')}>
                                         <Popup>
