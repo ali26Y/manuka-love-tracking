@@ -33,8 +33,10 @@ export default createStyled(
             height: 480,
             '& svg': {
                 position: 'relative',
-                top: '-24px',
+                top: '-50px',
                 left: '-12px',
+                height: '50px',
+                width: '50px',
             },
         },
         tooltipWrapper: {

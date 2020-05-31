@@ -1,3 +1,4 @@
+import React from 'react';
 import moment from 'moment';
 
 export const generateTableData = data => [
@@ -6,7 +7,7 @@ export const generateTableData = data => [
         value: data.batchId,
     },
     {
-        title: 'UMF Certification',
+        title: 'MGO Certification',
         value: data.analyticaFile.filename.substring(0, 16) + '...pdf',
         link: data.analyticaFile._meta.Location,
     },
@@ -27,7 +28,11 @@ export const generateTableData = data => [
         value: moment(data.bbDate_utc).format('Do MMMM YYYY'),
     },
     {
-        title: 'Beehive Location',
+        title: 'Region',
         value: data.location.area,
+    },
+    {
+        title: 'Country',
+        value: <strong>New Zealand</strong>,
     },
 ];

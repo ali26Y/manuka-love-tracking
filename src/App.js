@@ -115,7 +115,7 @@ const App = () => {
                                     helperText={errors.batchId ? errors.batchId.message : ''}
                                     variant="outlined"
                                     control={control}
-                                    defaultValue={queryString.parse(window.location.search.replace('?', '')).batchId}
+                                    defaultValue={queryString.parse(window.location.search.replace('?', '')).batchId || ''}
                                     rules={{ required: true, minLength: 2 }}
                                     error={!!errors.batchId}
                                 />

@@ -67,6 +67,14 @@ const Details = props => {
                         <Carousel data={data} />
                         <Box mb={11} />
                     </Fragment>
+                    {data.beekeeper.isPublic && data.beekeeper.description ? (
+                        <Fragment>
+                            <Typography align="center">{data.beekeeper.description}</Typography>
+                            <Box mb={11} />
+                        </Fragment>
+                    ) : (
+                        ''
+                    )}
                     <Map data={data} />
                 </Fragment>
             )}

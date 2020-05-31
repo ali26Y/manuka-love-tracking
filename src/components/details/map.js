@@ -11,7 +11,7 @@ export const markerIcon = color =>
     new L.DivIcon({
         className: 'markerIcon',
         html: `
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 172 172" style=" fill:#000000; opacity: 0.5;">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 172 172" style=" fill:#000000;">
                     <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
                         <path d="M0,172v-172h172v172z" fill="none"></path>
                         <g fill=${color}>
@@ -42,7 +42,7 @@ class NewFibreSite extends Component {
                         <Container maxWidth="lg">
                             <Paper>
                                 <Map
-                                    center={[data.location.latitude, data.location.longitude]}
+                                    center={[data.location.latitude + 0.08, data.location.longitude]}
                                     zoom={10}
                                     className={classes.fibreMap}
                                     attributionControl={false}
