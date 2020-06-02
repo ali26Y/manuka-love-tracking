@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import ReactGA from 'react-ga';
 import ReactPixel from 'react-facebook-pixel';
-import { Typography, Container, CssBaseline, Box, TextField, Button, CircularProgress } from '@material-ui/core';
+import Lottie from 'react-lottie';
+import { Typography, Container, CssBaseline, Box, TextField, Button } from '@material-ui/core';
 import { useForm, Controller } from 'react-hook-form';
 import queryString from 'query-string';
 import './App.css';
 import Styled from './styles';
 import searchIcon from './assets/search-icon.png';
+import animationData from './assets/scanner.json';
 
 import Details from './components/details';
 import Header from './components/wrapper';
@@ -23,6 +25,15 @@ const options = {
 
 ReactPixel.init('701719740395379', null, options);
 initializeReactGA();
+
+const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice',
+    },
+};
 
 const App = () => {
     const [loading, setLoading] = React.useState(false);
@@ -46,40 +57,42 @@ const App = () => {
         const qs = queryString.parse(window.location.search.replace('?', ''));
         setLoading(true);
         if (qs && qs.batchId && qs.batchId.length > 2) {
-            fetch(`${process.env.REACT_APP_API_URL}/${qs.batchId}`, {
-                method: 'GET',
-                mode: 'cors',
-                Connection: 'keep-alive',
-                'Content-Type': 'application/json',
-                headers: {
-                    'x-api-key': process.env.REACT_APP_API_KEY,
-                },
-            })
-                .then(async payload => {
-                    const json = await payload.json();
-                    setData(json);
-                    ReactPixel.trackCustom('Search Batch', {
-                        batchId: qs.batchId,
-                        isSuccessful: true,
-                    });
-                    ReactGA.event({
-                        category: 'User',
-                        action: `User submits BatchId ${qs.batchId}`,
-                    });
-                    setLoading(false);
+            setTimeout(() => {
+                fetch(`${process.env.REACT_APP_API_URL}/${qs.batchId}`, {
+                    method: 'GET',
+                    mode: 'cors',
+                    Connection: 'keep-alive',
+                    'Content-Type': 'application/json',
+                    headers: {
+                        'x-api-key': process.env.REACT_APP_API_KEY,
+                    },
                 })
-                .catch(err => {
-                    setErrorMsg(`Sorry we couldn't fetch your batch information. Please try again later`);
-                    ReactPixel.trackCustom('Search Batch', {
-                        batchId: qs.batchId,
-                        isSuccessful: false,
+                    .then(async payload => {
+                        const json = await payload.json();
+                        setData(json);
+                        ReactPixel.trackCustom('Search Batch', {
+                            batchId: qs.batchId,
+                            isSuccessful: true,
+                        });
+                        ReactGA.event({
+                            category: 'User',
+                            action: `User submits BatchId ${qs.batchId}`,
+                        });
+                        setLoading(false);
+                    })
+                    .catch(err => {
+                        setErrorMsg(`Sorry we couldn't fetch your batch information. Please try again later`);
+                        ReactPixel.trackCustom('Search Batch', {
+                            batchId: qs.batchId,
+                            isSuccessful: false,
+                        });
+                        ReactGA.event({
+                            category: 'User',
+                            action: `User submits wrong BatchId ${qs.batchId}`,
+                        });
+                        setLoading(false);
                     });
-                    ReactGA.event({
-                        category: 'User',
-                        action: `User submits wrong BatchId ${qs.batchId}`,
-                    });
-                    setLoading(false);
-                });
+            }, 2500);
         } else {
             setData(undefined);
             setLoading(false);
@@ -93,7 +106,7 @@ const App = () => {
                 {({ classes }) => (
                     <Header>
                         <Container className={classes.container} maxWidth="lg">
-                            <Typography align="center" variant="h4">
+                            <Typography align="center" variant="h4" className={classes.mainHeader}>
                                 Trace your batch & checkout your test certificate
                             </Typography>
                             <Box mb={4} />
@@ -137,7 +150,7 @@ const App = () => {
                                 <Details data={finalData} />
                             ) : loading ? (
                                 <div className={classes.progresWrapper}>
-                                    <CircularProgress className={classes.progress} />
+                                    <Lottie options={defaultOptions} height={300} width={300} loop background="transparent" speed={2} autoplay />
                                     <Box mb={10} />
                                 </div>
                             ) : errorMsg || (finalData && finalData.msg) ? (

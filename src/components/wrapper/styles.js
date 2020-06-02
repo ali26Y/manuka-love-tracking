@@ -65,8 +65,11 @@ export default createStyled(
             },
         },
         pageContainer: {
-            marginTop: '-10vh',
-            marginBottom: '100px',
+            marginTop: '-30vh',
+            marginBottom: '18vh',
+            '@media (max-width: 600px)': {
+                marginTop: '-40vh',
+            },
         },
         hero: {
             'background-image': `url(${beecomb})`,

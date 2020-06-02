@@ -38,6 +38,12 @@ export default createStyled(
         },
         progresWrapper: {
             textAlign: 'center',
+            '& svg': {
+                '@media (max-width: 600px)': {
+                    maxWidth: '200px',
+                    maxHeight: '200px',
+                },
+            },
         },
         progress: {
             width: '80px !important',
@@ -52,6 +58,11 @@ export default createStyled(
         },
         helperText: {
             fontSize: '12.5px',
+        },
+        mainHeader: {
+            '@media (max-width: 600px)': {
+                fontSize: '1.6rem',
+            },
         },
     }),
     { withTheme: true }
